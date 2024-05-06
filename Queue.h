@@ -23,11 +23,11 @@ public:
         return data;
     }
 
-    void isEmpty(){
+    bool isEmpty(){
         return !list.isEmpty();
     }
 
-    void isFull(){
+    bool isFull(){
         return !list.isEmpty();
     }
 
