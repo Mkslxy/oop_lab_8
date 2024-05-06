@@ -4,6 +4,15 @@
 using namespace std;
 
 template<typename T>
+struct Node {
+    T data;
+    shared_ptr<Node<T>> address;
+    weak_ptr<Node<T>> tail;
+
+    Node(T value) : data(value), address(nullptr) {}
+};
+
+template<typename T>
 class SingleLink {
 protected:
     shared_ptr<Node<T>> body;
