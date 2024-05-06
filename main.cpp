@@ -1,32 +1,42 @@
 #include <iostream>
 #include <memory>
-#include "DoubleLink.h"
+#include "Stack.h"
+#include "PriorityQueue.h"
 
 using namespace std;
 
-
 int main() {
-    try {
-        SingleLink<int> test;
-        test.addFirst(1);
-        test.addLast(3);
-        test.addLast(2);
-        test.print();
-        test.removeFirst();
-        test.print();
-        //test.access();
-        test.getSize();
-        test.isEmpty();
-        test.contains(2);
-
-        cout << endl;
-
-        DoubleLink<float> test2;
-        test2.AddFirst(2.345);
-        test2.AddLast(5.2345);
-        test2.RemoveFirst();
-        test2.print();
-        test2.access(1);
-    } catch (bool pass) {};
+    /* Queue<int> first_queue;
+     first_queue.Enqueue(4);
+     first_queue.Enqueue(2);
+     first_queue.Enqueue(5);
+     for (int i = 0; i < 3; ++i) {
+         cout << first_queue.peek() << "\n";
+         first_queue.Dequeue();
+     }*/
+/*
+    PriorityQueue<int> first;
+    first.Enqueue(100 , 132);
+    first.Enqueue(25 , 1);
+    first.Enqueue(75 , 2000);
+    first.Enqueue(1 , 2);
+    for (int i = 0; i < 4; i++) {
+        cout << first.Dequeue() << " ";
+    }
+    */
+    Stack<5, int> first_stack;
+    first_stack.push(1);
+    first_stack.push(2);
+    first_stack.push(3);
+    first_stack.push(4);
+    first_stack.push(5);
+    if (first_stack.isFull()) {
+        for (int i = 0; i < 5; i++) {
+            cout << first_stack.peek() << "\n";
+            first_stack.pop();
+        }
+    } else if (first_stack.isEmpty()) {
+        throw out_of_range("Error");
+    }
     return 0;
 }

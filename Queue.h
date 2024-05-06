@@ -13,13 +13,13 @@ public:
     }
 
     T Dequeue(){
-        T data = list.access(4);
+        T data = list.access(0);
         list.removeFirst();
         return data;
     }
 
     T peek(){
-        T data = list.access(4);
+        T data = list.access(0);
         return data;
     }
 

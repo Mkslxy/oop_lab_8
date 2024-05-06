@@ -77,7 +77,7 @@ public:
         return currentNode->data;
     }
 
-    void add(int index , T& value ){
+    void add(int index , T value ){
         if (index < 0 || index > size){
             throw out_of_range("Out of range");
         }
@@ -117,8 +117,7 @@ public:
     }
 
     bool isEmpty() const {
-        if (size > 0)return true;
-        else return false;
+        return size == 0;
     }
     bool contains(const T& value) const {
         auto currentNode = body;
